@@ -1,0 +1,28 @@
+extends layout
+block content
+ h1= title
+ form(id='rabbitForm', action="/resource/rabbits", method="POST")
+  div.form-group
+   label.rabbitAttr(for='rabbit_color') rabbit Color
+   input#rabbit_color(type='text', name='rabbit_color')
+  div.form-group
+   label.rabbitAttr(for='rabbit_breed') rabbit Breed
+   input#rabbit_breed(type='text', name='rabbit_breed')
+  div.form-group
+   label.rabbitAttr(for='rabbit_price') rabbit Cost 
+   input#rabbit_price(type='text', name='rabbit_price')
+  input(type="submit")
+ script.
+  document.forms['rabbitForm'].addEventListener('submit', (event) => {
+    event.preventDefault();
+    fetch(event.target.action, {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(event.target)) 
+    }).then((resp) => {
+        return resp.json();
+    }).then((body) => {
+        alert("Save succeded")
+    }).catch((error) => {
+        alert("Save failed " + error )
+    });
+   }); 

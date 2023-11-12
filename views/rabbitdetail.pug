@@ -1,0 +1,23 @@
+extends layout
+block content
+ h1= title
+ if(toShow == null)
+    h2 No instance to update
+ else
+ - let rabbitid = toShow._id
+ - let rabbit_color = toShow.rabbit_color
+ - let rabbit_breed = toShow.rabbit_breed
+ - let rabbit_price = toShow.rabbit_price
+ div
+ div.row
+  div(class='rabbitAttr mr-3') rabbit ID is:
+  div #{rabbitid}
+ div.row
+ div(class='rabbitAttr mr-3') rabbit Color is:
+ div #{rabbit_color}
+ div.row
+ div(class='rabbitAttr mr-3') rabbit Breed is:
+ div #{rabbit_breed}
+ div.row
+ div(class='rabbitAttr mr-3') rabbit Cost is:
+ div #{rabbit_price}

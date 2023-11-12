@@ -9,4 +9,8 @@ const rabbit_controlers= require('../controllers/rabbit');
 var router = express.Router();
 /* GET rabbits */
 router.get('/', rabbit_controlers.rabbit_view_all_Page );
+router.get('/detail', rabbit_controlers.rabbit_view_one_Page);
+router.get('/create', rabbit_controlers.rabbit_create_Page);
+router.get('/update', rabbit_controlers.rabbit_update_Page);
+router.get('/delete', rabbit_controlers.rabbit_delete_Page);
 module.exports = router;
