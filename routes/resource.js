@@ -4,7 +4,7 @@ var router = express.Router();
 var api_controller = require('../controllers/api');
 var rabbit_controller = require('../controllers/rabbit');
 /// API ROUTE ///
-// GET resources base.npm
+// GET resources base.
 router.get('/', api_controller.api);
 /// rabbit ROUTES ///
 // POST request for creating a rabbit.
@@ -18,4 +18,3 @@ router.get('/rabbits/:id', rabbit_controller.rabbit_detail);
 // GET request for list of all rabbit items.
 router.get('/rabbits', rabbit_controller.rabbit_list);
 module.exports = router;
-
